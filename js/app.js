@@ -2,7 +2,7 @@
 import {
   observeAuthState
 } from "./services/auth.service.js";
-
+import { auth, db } from "./config/firebase.js";
 import {
   setState,
   getState
