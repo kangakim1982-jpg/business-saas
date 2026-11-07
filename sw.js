@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "business-saas-v3";
+const CACHE_NAME = "business-saas-v4";
 
 const APP_FILES = [
   "./",
