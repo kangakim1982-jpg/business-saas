@@ -101,7 +101,7 @@ function initializeApp() {
     isLoading: true
   });
 testFirebaseConnection();
-  registerServiceWorker();
+registerServiceWorker();
 
   startRouter("dashboard");
 
