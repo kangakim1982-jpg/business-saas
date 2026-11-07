@@ -1,4 +1,7 @@
-
+import {
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
 import {
   observeAuthState
 } from "./services/auth.service.js";
@@ -84,14 +87,32 @@ function renderDashboard(container) {
 
 registerRoute("dashboard", renderDashboard);
 
-// FIREBASE CONNECTION TEST
-function testFirebaseConnection() {
-  const status = auth && db
-    ? "Firebase berhasil diinisialisasi."
-    : "Firebase belum terhubung.";
 
-  console.log(status);
+ // FIREBASE CONNECTION TEST
+async function testFirebaseConnection() {
+  console.log("Memulai pengujian Firestore...");
+
+  try {
+    await getDoc(
+      doc(db, "connection_tests", "connectivity-check")
+    );
+
+    console.log("Firestore berhasil dihubungi.");
+  } catch (error) {
+    if (error.code === "permission-denied") {
+      console.log(
+        "Firestore merespons, tetapi akses ditolak oleh Security Rules."
+      );
+    } else {
+      console.error(
+        "Pengujian Firestore gagal:",
+        error.code,
+        error.message
+      );
+    }
+  }
 }
+
 // =========================
 // INITIALIZATION
 // =========================
