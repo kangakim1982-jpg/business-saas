@@ -1,0 +1,88 @@
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 200px;
+    --spacing-lg: 20px;
+  }
+
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+  }
+
+  .content-area {
+    padding: var(--spacing-md);
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-heading: 21px;
+    --font-size-large: 18px;
+  }
+
+  .content-area {
+    padding: var(--spacing-sm);
+  }
+
+  .app-header {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+
+  .form-control {
+    font-size: 16px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+  .content-area {
+    padding: 8px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
