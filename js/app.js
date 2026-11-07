@@ -84,6 +84,14 @@ function renderDashboard(container) {
 
 registerRoute("dashboard", renderDashboard);
 
+// FIREBASE CONNECTION TEST
+function testFirebaseConnection() {
+  const status = auth && db
+    ? "Firebase berhasil diinisialisasi."
+    : "Firebase belum terhubung.";
+
+  console.log(status);
+}
 // =========================
 // INITIALIZATION
 // =========================
@@ -92,7 +100,7 @@ function initializeApp() {
   setState({
     isLoading: true
   });
-
+testFirebaseConnection();
   registerServiceWorker();
 
   startRouter("dashboard");
